@@ -15,11 +15,11 @@ import {
   loadNexusHistory,
   parseAIResponse,
   saveNexusHistory,
+  systemPrompt,
   type NexusMessage,
 } from "@/lib/nexus-chat";
 import { cn } from "@/lib/utils";
-
-const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/nexus-chat`;
+import { GoogleGenerativeAI } from "@google/generative-ai";
 const typingMessages = [
   "Analisando dados do portfólio...",
   "Cruzando specs com concorrentes...",
@@ -99,25 +99,16 @@ export function NexusChat() {
   useEffect(() => {
     let cancelled = false;
 
-    const checkStatus = async () => {
+    const checkStatus = () => {
       try {
-        const response = await fetch(CHAT_URL, {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
-            apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
-          },
-        });
-
-        if (!response.ok) throw new Error("status unavailable");
-        const payload = await response.json() as { connected?: boolean };
-        if (!cancelled) setStatus(payload.connected ? "connected" : "disconnected");
+        const apiKey = import.meta.env.VITE_GEMINI_API_KEY || window.localStorage.getItem("nexus_gemini_key");
+        if (!cancelled) setStatus(apiKey ? "connected" : "disconnected");
       } catch {
         if (!cancelled) setStatus("disconnected");
       }
     };
 
-    void checkStatus();
+    checkStatus();
     return () => {
       cancelled = true;
     };
@@ -136,70 +127,36 @@ export function NexusChat() {
     setIsStreaming(true);
 
     try {
-      const response = await fetch(CHAT_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
-          apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
-        },
-        body: JSON.stringify({
-          messages: conversation.map((message) => ({ role: message.role, content: message.content })),
-          platformContext: context.platformContext,
-          currentPage: context.currentPage,
-        }),
-      });
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY || window.localStorage.getItem("nexus_gemini_key");
 
-      if (!response.ok || !response.body) {
-        const payload = await response.json().catch(() => ({ error: "Falha ao iniciar o streaming." }));
-        throw new Error(payload.error ?? "Falha ao iniciar o streaming.");
+      if (!apiKey) {
+        throw new Error("Chave de API do Google Gemini não configurada. Caso seja um ambiente local, insira uma VITE_GEMINI_API_KEY no arquivo .env ou informe-a na tela de Configurações da plataforma.");
       }
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = "";
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const model = genAI.getGenerativeModel({
+        model: "gemini-1.5-flash",
+        systemInstruction: systemPrompt + `\n\nMÓDULO ATIVO: ${context.currentPage}\n\nCONTEXTO DA PLATAFORMA:\n${context.platformContext}`,
+      });
+
+      const history = conversation.slice(0, -1).map(msg => ({
+        role: msg.role === "user" ? "user" : "model",
+        parts: [{ text: msg.content }],
+      }));
+
+      const chat = model.startChat({
+        history,
+      });
+
+      const result = await chat.sendMessageStream(text);
+      
       let assistantSoFar = "";
-      let streamDone = false;
-
-      while (!streamDone) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-
-        let newlineIndex = buffer.indexOf("\n");
-        while (newlineIndex !== -1) {
-          let line = buffer.slice(0, newlineIndex);
-          buffer = buffer.slice(newlineIndex + 1);
-
-          if (line.endsWith("\r")) line = line.slice(0, -1);
-          if (!line.startsWith("data: ")) {
-            newlineIndex = buffer.indexOf("\n");
-            continue;
-          }
-
-          const jsonStr = line.slice(6).trim();
-          if (jsonStr === "[DONE]") {
-            streamDone = true;
-            break;
-          }
-
-          try {
-            const parsed = JSON.parse(jsonStr) as { choices?: Array<{ delta?: { content?: string } }> };
-            const delta = parsed.choices?.[0]?.delta?.content;
-            if (delta) {
-              assistantSoFar += delta;
-              setMessages((current) => current.map((message) => (
-                message.id === assistantMessage.id ? { ...message, content: assistantSoFar } : message
-              )));
-            }
-          } catch {
-            buffer = `${line}\n${buffer}`;
-            break;
-          }
-
-          newlineIndex = buffer.indexOf("\n");
-        }
+      for await (const chunk of result.stream) {
+        const chunkText = chunk.text();
+        assistantSoFar += chunkText;
+        setMessages((current) => current.map((message) => (
+          message.id === assistantMessage.id ? { ...message, content: assistantSoFar } : message
+        )));
       }
 
       if (!assistantSoFar.trim()) {

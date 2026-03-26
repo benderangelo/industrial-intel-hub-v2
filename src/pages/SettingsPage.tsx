@@ -1,11 +1,44 @@
-import { Bell, Download, Layers3, Monitor, Moon, Sun } from "lucide-react";
+import { Bell, Download, Key, Layers3, Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { toast } from "@/hooks/use-toast";
 
 export default function SettingsPage() {
   const { theme, resolvedTheme, setTheme } = useTheme();
+  const [apiKey, setApiKey] = useState("");
+  const [isKeySaved, setIsKeySaved] = useState(false);
+
+  useEffect(() => {
+    const savedKey = window.localStorage.getItem("nexus_gemini_key");
+    if (savedKey) {
+      setApiKey(savedKey);
+      setIsKeySaved(true);
+    }
+  }, []);
+
+  const handleSaveKey = () => {
+    if (!apiKey.trim()) {
+      window.localStorage.removeItem("nexus_gemini_key");
+      setIsKeySaved(false);
+      toast({ title: "Chave removida", description: "O motor de IA ficará offline até que você configure uma nova chave." });
+      return;
+    }
+    window.localStorage.setItem("nexus_gemini_key", apiKey.trim());
+    setIsKeySaved(true);
+    toast({ title: "Chave salva com sucesso!", description: "O assistente NEXUS AI agora está conectado à API do Gemini." });
+  };
+
+  const clearKey = () => {
+    setApiKey("");
+    window.localStorage.removeItem("nexus_gemini_key");
+    setIsKeySaved(false);
+    toast({ title: "Chave removida", description: "O assistente foi desconectado." });
+  };
+
   const operationalCards = [
     {
       title: "Data sources",
@@ -52,8 +85,45 @@ export default function SettingsPage() {
     <div className="space-y-6 p-6">
       <div>
         <h1 className="text-2xl font-bold text-foreground">Settings</h1>
-        <p className="mt-1 text-sm text-muted-foreground">Preferências visuais e leitura operacional da plataforma.</p>
+        <p className="mt-1 text-sm text-muted-foreground">Preferências visuais e configurações do motor de IA da plataforma.</p>
       </div>
+
+      <Card className="section-enter border-border bg-card/90 shadow-[0_18px_60px_hsl(var(--background)/0.28)]">
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <Key className="h-5 w-5 text-primary" />
+            <CardTitle className="text-base">Integração do Assistente (NEXUS AI)</CardTitle>
+          </div>
+          <CardDescription>
+            Conecte o motor de inteligência artificial de forma segura preenchendo sua chave do Google Gemini. 
+            Esta chave é salva apenas no seu navegador.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex max-w-xl flex-col gap-3 sm:flex-row">
+            <Input
+              type="password"
+              placeholder="Ex: AIzaSyB..."
+              value={apiKey}
+              onChange={(e) => setApiKey(e.target.value)}
+              className="font-mono text-sm"
+            />
+            <div className="flex shrink-0 gap-2">
+              <Button onClick={handleSaveKey}>
+                {isKeySaved ? "Atualizar" : "Salvar Chave"}
+              </Button>
+              {isKeySaved && (
+                <Button variant="destructive" onClick={clearKey}>
+                  Remover
+                </Button>
+              )}
+            </div>
+          </div>
+          {isKeySaved && (
+            <p className="mt-2 text-sm font-medium text-chart-success">✓ Acesso ao assistente habilitado e seguro.</p>
+          )}
+        </CardContent>
+      </Card>
 
       <Card className="section-enter border-border bg-card/90 shadow-[0_18px_60px_hsl(var(--background)/0.28)]">
         <CardHeader>
