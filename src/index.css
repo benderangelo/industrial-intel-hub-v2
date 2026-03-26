@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 18% 97%;
+    --foreground: 215 24% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 24% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 24% 16%;
+
+    --primary: 16 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 20% 92%;
+    --secondary-foreground: 215 22% 22%;
+
+    --muted: 40 16% 94%;
+    --muted-foreground: 215 12% 42%;
+
+    --accent: 200 80% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 16% 84%;
+    --input: 215 16% 84%;
+    --ring: 16 85% 55%;
+
+    --radius: 0.5rem;
+
+    --chart-case: 16 85% 55%;
+    --chart-competitor: 205 84% 42%;
+    --chart-success: 146 72% 34%;
+    --chart-warning: 38 92% 50%;
+    --chart-danger: 0 72% 51%;
+
+    --sidebar-background: 40 22% 95%;
+    --sidebar-foreground: 215 18% 28%;
+    --sidebar-primary: 16 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 36 20% 90%;
+    --sidebar-accent-foreground: 215 24% 16%;
+    --sidebar-border: 215 16% 84%;
+    --sidebar-ring: 16 85% 55%;
+  }
+
+  .dark {
+    --background: 215 28% 10%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 25% 13%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 25% 13%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 16 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 20% 18%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 215 20% 16%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 200 80% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 16 85% 55%;
+
+    --chart-case: 16 85% 55%;
+    --chart-competitor: 200 80% 50%;
+    --chart-success: 142 70% 45%;
+    --chart-warning: 38 92% 50%;
+    --chart-danger: 0 72% 51%;
+
+    --sidebar-background: 215 30% 8%;
+    --sidebar-foreground: 210 20% 75%;
+    --sidebar-primary: 16 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 14%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 215 20% 15%;
+    --sidebar-ring: 16 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .kpi-card {
+    @apply bg-card border border-border rounded-lg p-5 transition-all duration-300;
+    &:hover {
+      box-shadow: 0 0 24px hsl(16 85% 55% / 0.08);
+    }
+  }
+  .data-mono {
+    font-family: 'JetBrains Mono', monospace;
+    @apply tabular-nums;
+  }
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+  .section-enter {
+    animation: section-fade-in 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .nexus-fab {
+    @apply fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full text-primary-foreground transition-transform duration-200 hover:scale-[1.08] active:scale-[0.98];
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(16 85% 48%));
+    box-shadow: 0 4px 20px hsl(var(--primary) / 0.4);
+  }
+
+  .nexus-fab-status {
+    @apply absolute right-2 top-2 h-2.5 w-2.5 rounded-full border border-card;
+  }
+
+  .nexus-typing-dot {
+    @apply inline-block h-1.5 w-1.5 rounded-full bg-primary;
+    animation: nexus-dot 1s ease-in-out infinite;
+  }
+
+  .nexus-markdown {
+    @apply space-y-3;
+  }
+
+  .nexus-markdown p,
+  .nexus-markdown li,
+  .nexus-markdown td,
+  .nexus-markdown th {
+    overflow-wrap: break-word;
+  }
+
+  .nexus-markdown ul {
+    @apply ml-4 list-disc space-y-1;
+  }
+
+  .nexus-markdown ol {
+    @apply ml-4 list-decimal space-y-1;
+  }
+
+  .nexus-markdown h2 {
+    @apply text-base font-semibold text-foreground;
+  }
+
+  .nexus-markdown h3 {
+    @apply text-sm font-semibold text-foreground;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.8); }
+}
+
+@keyframes section-fade-in {
+  from { opacity: 0; transform: translateY(12px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes nexus-dot {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.35; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground) / 0.5); }
