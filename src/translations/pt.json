@@ -1,0 +1,1008 @@
+{
+  "sidebar": {
+    "dashboard": "Painel Principal",
+    "portfolioDirectory": "Diretório do Portfólio",
+    "competitorBenchmarking": "Benchmarking Concorrentes",
+    "engineeringSubsystems": "Subsistemas de Engenharia",
+    "regionalIntelligence": "Inteligência Regional",
+    "nextGenRoadmap": "Roadmap Next Gen",
+    "fieldIntelligence": "Inteligência de Campo",
+    "webScanner": "Scanner Web",
+    "platformGuide": "Guia da Plataforma",
+    "settings": "Configurações",
+    "constructionAg": "Construction-Ag Convergence",
+    "navigation": "Navegação"
+  },
+  "topbar": {
+    "welcome": "Plataforma Nexus",
+    "search": "Buscar equipamentos, famílias...",
+    "regions": {
+      "all": "Todas as Regiões",
+      "na": "América do Norte",
+      "eu": "Europa",
+      "latam": "LATAM",
+      "apac": "APAC",
+      "ame": "África/M. Oriental"
+    },
+    "language": "Idioma",
+    "theme": "Tema"
+  },
+  "language": {
+    "en": "Inglês",
+    "pt": "Português"
+  },
+  "dashboard": {
+    "title": "Macro View — Operações Globais",
+    "subtitle": "Inteligência de portfólio em tempo real em todas as regiões",
+    "regionalFilter": "Filtro Regional",
+    "regionalFilterDesc": "Atualize globo, KPIs e cards para uma leitura regional específica.",
+    "kpiTracked": "Modelos CASE Monitorados",
+    "kpiCompetitors": "Modelos Concorrentes Mapeados",
+    "kpiInsights": "Insights Pendentes de Engenharia",
+    "mapTitle": "Mapa de Implantação Global",
+    "selectRegion": "Selecionar região",
+    "allRegions": "Todas as regiões",
+    "liveTracking": "Live Tracking",
+    "insights": {
+      "priorityFocus": "Foco prioritário: {{equipment}}",
+      "highPriority": "3 alta prioridade",
+      "regionalSignal": "Sinal regional: {{trend}}",
+      "immediateAction": "2 exigem ação imediata"
+    },
+    "hotspots": "Hotspots competitivos",
+    "openDetailedMap": "Abrir mapa detalhado",
+    "executiveBriefTitle": "Leitura executiva regional",
+    "globalPortfolioBrief": "Briefing do portfólio global",
+    "regionalOperatingBrief": "Briefing operacional {{region}}",
+    "globalBriefDesc": "A plataforma consolida {{machines}} máquinas CASE, {{competitors}} rivais e {{hotspots}} hotspots competitivos na mesma leitura operacional.",
+    "regionalBriefDesc": "{{region}} combina {{machines}} modelos ativos, {{families}} famílias e {{electrified}} plataformas eletrificadas no lineup monitorado.",
+    "openPortfolio": "Abrir Portfolio",
+    "openBenchmarking": "Abrir Benchmarking",
+    "trackedFamilies": "Famílias monitoradas",
+    "evPlatforms": "Plataformas EV",
+    "averageScore": "Score médio",
+    "urgentScannerFeed": "Feed urgente do Scanner",
+    "priorityAlerts": "Alertas prioritários",
+    "noCriticalAlerts": "Nenhum alerta crítico apareceu para o recorte atual.",
+    "modelsSubtitle": "{{count}} modelos do manual",
+    "fullSyncedBase": "Base completa sincronizada",
+    "globalManufacturers": "{{count}} fabricantes globais",
+    "activeCompetitiveBase": "Base competitiva ativa em {{count}} hotspots",
+    "pressurePoints": "Pontos de pressão em {{region}}",
+    "highPressureSignals": "{{count}} sinais de alta pressão",
+    "activeLineup": "lineup ativo em {{region}}",
+    "regionalContrast": "Contraste Regional",
+    "compareDemandEquip": "Compare demanda, tendência e equipamentos entre duas regiões lado a lado.",
+    "regionA": "Região A",
+    "regionB": "Região B",
+    "radarContrast": "Contraste Radar",
+    "executiveScale": "Escala executiva",
+    "tie": "Empate",
+    "demandLead": "Liderança em Demanda",
+    "evLead": "Liderança em EV",
+    "portfolioBreadth": "Amplitude de Portfólio",
+    "demand": "Demanda",
+    "evAdoption": "Adoção EV",
+    "diversity": "Diversidade",
+    "balanced": "Equilibrado",
+    "leader": "Líder",
+    "executiveRead": "Leitura Executiva",
+    "trackedLines": "linhas rastreadas",
+    "openRegionalMap": "Abrir detalhe regional no mapa",
+    "lineup": "Lineup",
+    "trend": "Tendência",
+    "diversityMetric": "Diversidade",
+    "summaryBalanced": "{{regionA}} e {{regionB}} apresentam equilíbrio operacional no recorte atual.",
+    "summaryAdvantage": "{{winner}} abre a maior vantagem em {{metric}}, enquanto {{trendWinner}} sustenta o melhor momentum de tendência.",
+    "regionDetail": {
+      "deploymentIntelligence": "Inteligência de Implantação",
+      "dominance": "Domínio de mercado",
+      "commercial": "Comercialização global",
+      "competitorHotspots": "hotspots competitivos",
+      "pointsOfDominance": "pontos de domínio",
+      "commercialPoints": "pontos comerciais",
+      "competitorPoints": "pontos de concorrência",
+      "clickToFocus": "Clique no card lateral para focar no mapa",
+      "focusStack": "Stack de foco em {{region}}",
+      "regionalPortfolio": "Portfolio regional",
+      "regionalBenchmark": "Benchmark da região",
+      "derivedPriorities": "Prioridades derivadas",
+      "noEngineeringSignals": "Nenhum sinal de engenharia adicional foi mapeado para esta região.",
+      "mapLayers": "Camadas do mapa",
+      "competitors": "Concorrência",
+      "allLayersHidden": "Todas as camadas estão ocultas; reative CASE ou Concorrência para voltar a ver os pontos no mapa.",
+      "selectedPoint": "Ponto selecionado",
+      "power": "Potência",
+      "weight": "Peso",
+      "pointReading": "Leitura do ponto",
+      "hotspotReading": "Leitura do hotspot",
+      "category": "Categoria",
+      "caseRival": "CASE rival",
+      "clickToFocusAndPopup": "Clique para focar o ponto e abrir o popup no mapa.",
+      "emergingSignal": "Sinal emergente",
+      "pressureHigh": "Pressão alta",
+      "pressureMedium": "Pressão média",
+      "rivalOf": "rival de {{brand}}",
+      "modelsWithDominance": "modelos com domínio",
+      "modelsCommercialized": "modelos comercializados",
+      "noPointsMapped": "Nenhum ponto específico foi mapeado para {{region}} neste recorte.",
+      "summaryStats": "{{dom}} modelos CASE lideram frentes-chave, {{com}} sustentam comercialização ativa e {{comp}} hotspots monitoram pressão competitiva em {{region}}."
+    }
+  },
+  "nexusChat": {
+    "title": "NEXUS AI",
+    "subtitle": "Engenharia de Portfólio",
+    "welcome": "🧠 **NEXUS AI**\n\nSou o motor de inteligência da plataforma CASE Nexus. Conheço cada produto do portfólio CASE, os concorrentes globais mapeados, os scores de engenharia de cada subsistema e os gaps competitivos identificados.\n\nPosso te ajudar com:\n- Análise comparativa entre qualquer produto CASE e concorrente\n- Identificação de gaps técnicos e recomendações Next Gen\n- Simulação de cenários de evolução de produto\n- Gráficos comparativos de specs técnicas\n- Briefings executivos para apresentações\n\nPergunte qualquer coisa sobre o portfólio.",
+    "typingData": "Analisando dados do portfólio...",
+    "typingSpecs": "Cruzando specs com concorrentes...",
+    "typingGaps": "Identificando gaps de engenharia...",
+    "typingViz": "Gerando visualizações...",
+    "typingRecs": "Preparando recomendações...",
+    "placeholder": "Pergunte sobre qualquer produto, concorrente ou estratégia...",
+    "clearConfirm": "Limpar a conversa do NEXUS AI?",
+    "unavailable": "NEXUS AI indisponível"
+  },
+  "common": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema",
+    "ready": "Pronto",
+    "unified": "Unificada",
+    "active": "Ativo",
+    "yes": "Sim",
+    "no": "Não",
+    "activeProduction": "Produção Ativa",
+    "months": {
+      "jan": "Jan", "feb": "Fev", "mar": "Mar", "apr": "Abr", "may": "Mai", "jun": "Jun",
+      "jul": "Jul", "aug": "Ago", "sep": "Set", "oct": "Out", "nov": "Nov", "dec": "Dez"
+    },
+    "subsystems": {
+      "structure": "Estrutura",
+      "powertrain": "Powertrain",
+      "hydraulics": "Hidráulica",
+      "transmission": "Transmissão",
+      "implements": "Implementos",
+      "cabin": "Cabine"
+    },
+    "maturity": {
+      "header": {
+        "scorecard": "Portfolio Maturity Scorecard",
+        "title": "Maturidade do portfólio — visão do Engenheiro"
+      },
+      "metrics": {
+        "readiness": {
+          "label": "Portfolio Readiness",
+          "desc": "{{readyCount}} de {{total}} modelos com score ≥85"
+        },
+        "gapCoverage": {
+          "label": "Gap Coverage",
+          "desc": "{{covered}} de {{total}} itens critical/high em ação"
+        },
+        "evPenetration": {
+          "label": "EV Penetration",
+          "desc": "{{count}} plataformas eletrificadas no lineup"
+        },
+        "competitiveParity": {
+          "label": "Competitive Parity",
+          "desc_ahead": "CASE à frente da média concorrente",
+          "desc_behind": "Concorrência à frente em subsistemas"
+        },
+        "fieldRoadmap": {
+          "label": "Field → Roadmap",
+          "desc": "{{matched}} de {{total}} features de campo no roadmap"
+        }
+      }
+    },
+    "heatmap": {
+      "header": {
+        "title": "Subsystem Gap Heatmap",
+        "subtitle": "Maturidade por família × subsistema",
+        "instruction": "Clique na célula para navegar até o subsistema da máquina."
+      },
+      "table": {
+        "family": "Família"
+      },
+      "status": {
+        "roadmap": "roadmap"
+      }
+    },
+    "timeline": {
+      "header": {
+        "title": "Technology Readiness Timeline",
+        "subtitle": "Evolução temporal por subsistema",
+        "instruction": "Barras agrupadas por subsistema e coloridas por prioridade. Hover para detalhes."
+      },
+      "legend": {
+        "priority": {
+          "critical": "Crítico",
+          "high": "Alto",
+          "medium": "Médio",
+          "low": "Baixo"
+        }
+      },
+      "phase": "Fase {{number}}",
+      "dependencies": {
+        "label": "Dependências cruzadas"
+      }
+    },
+    "data": {
+      "families": {
+        "Motoniveladoras": "Motoniveladoras",
+        "Retroescavadeiras": "Retroescavadeiras",
+        "Escavadeiras (E-Series)": "Escavadeiras (E-Series)",
+        "Pás Carregadeiras (G-Series)": "Pás Carregadeiras (G-Series)",
+        "Tratores de Esteira (M-Series)": "Tratores de Esteira (M-Series)",
+        "Carregadeiras Articuladas Pequenas (SAL)": "Carregadeiras Articuladas Pequenas (SAL)",
+        "Equipamentos Compactos": "Equipamentos Compactos"
+      },
+      "categories": {
+        "Heavy": "Pesado",
+        "Light": "Leve",
+        "All": "Todos"
+      },
+      "regions": {
+        "North America": "América do Norte",
+        "Europe": "Europa",
+        "LATAM": "LATAM",
+        "APAC": "APAC",
+        "Africa/Middle East": "África / Oriente Médio",
+        "All": "Todas as Regiões"
+      },
+      "technical": {
+        "Potência": "Potência",
+        "Peso operacional": "Peso operacional",
+        "Transmissão": "Transmissão",
+        "Motor": "Motor",
+        "Caçamba": "Caçamba",
+        "Fluxo Hidráulico": "Fluxo Hidráulico",
+        "Pressão Hidráulica": "Pressão Hidráulica",
+        "Força de Desagregação": "Força de Desagregação",
+        "Carga de Tombamento": "Carga de Tombamento",
+        "Vão Livre": "Vão Livre",
+        "Capacidade de Carga": "Capacidade de Carga",
+        "Raio de Giro": "Raio de Giro",
+        "Velocidade Máxima": "Velocidade Máxima",
+        "Tanque de Combustível": "Tanque de Combustível",
+        "Dimensões": "Dimensões",
+        "Desempenho": "Desempenho",
+        "Configuração": "Configuração",
+        "Segurança": "Segurança",
+        "Hidráulica": "Hidráulica",
+        "Estrutura": "Estrutura",
+        "Cabine": "Cabine",
+        "Tecnologia": "Tecnologia",
+        "Manutenção": "Manutenção",
+        "Crítica": "Crítica",
+        "Alta": "Alta",
+        "Média": "Média",
+        "Baixa": "Baixa",
+        "Muito Alta": "Muito Alta",
+        "Gaps de Engenharia": "Gaps de Engenharia",
+        "Recomendações": "Recomendações",
+        "Análise de Subsistemas": "Análise de Subsistemas",
+        "Comparativo Técnico": "Comparativo Técnico"
+      }
+    },
+    "moreSoon": "Mais controles em breve",
+    "backHome": "Voltar para o Início",
+    "pageNotFound": "Oops! Página não encontrada",
+    "opsStatus": "Status operacional",
+    "currentTheme": "Tema atual:",
+    "syncedExp": "experiência analítica sincronizada entre módulos.",
+    "accessEnabled": "Acesso ao assistente habilitado e seguro.",
+    "keySaved": "Chave salva com sucesso!",
+    "keyRemoved": "Chave removida",
+    "assistantOffline": "O motor de IA ficará offline até que você configure uma nova chave.",
+    "assistantConnected": "O assistente NEXUS AI agora está conectado à API do Gemini.",
+    "assistantDisconnected": "O assistente foi desconectado."
+  },
+  "roadmap": {
+    "title": "Next Gen Roadmap",
+    "header": {
+      "subtitle": "Visão do Engenheiro de Portfólio — maturidade, gaps competitivos e roadmap tecnológico CASE Construction."
+    },
+    "status": {
+      "proposed": "Proposto",
+      "approved": "Aprovado",
+      "in_development": "Em Desenvolvimento",
+      "completed": "Implementado",
+      "deferred": "Adiado",
+      "rejected": "Rejeitado"
+    },
+    "filter": {
+      "family": "Família",
+      "subsystem": "Subsistema",
+      "priority": "Prioridade",
+      "phase": "Fase",
+      "phaseCount": "Fase {{phase}}"
+    },
+    "investment": {
+      "title": "Sumário de investimento",
+      "total": "Total roadmap"
+    },
+    "impact": {
+      "title": "Impacto projetado"
+    },
+    "suggestions": {
+      "title": "Sugestões vindas da inteligência estratégica",
+      "subtitle": "Ações sugeridas a partir da Trajetória Competitiva e do Field Intelligence."
+    },
+    "actions": {
+      "sendDiscussion": "Enviar para discussão",
+      "analyzeAI": "Analisar com IA"
+    },
+    "details": {
+      "family": "Família",
+      "time": "Tempo",
+      "estimatedCost": "Custo estimado",
+      "affectedModels": "Modelos afetados",
+      "addressedCompetitors": "Concorrentes endereçados",
+      "scoreBeforeAfter": "Score antes/depois",
+      "current": "Atual",
+      "projected": "Projetado",
+      "impactRisk": "Impacto e risco",
+      "dependencies": "Dependências:",
+      "risk": "Risco {{level}}"
+    },
+    "ai": {
+      "prompt": {
+        "analyze": "Analise profundamente o item de roadmap \"{{title}}\".",
+        "family": "Família afetada: {{family}}.",
+        "scores": "Score atual {{current}}, score projetado {{projected}}, delta {{delta}}.",
+        "explain": "Explique riscos, dependências, retorno competitivo e recomendação executiva."
+      }
+    }
+  },
+  "field": {
+    "title": "Field Intelligence",
+    "subtitle": "Dados de campo que calibram a priorização de produto e fecham o loop entre engenharia e vendas.",
+    "newReport": "Novo relatório de campo",
+    "restorePresets": "Restaurar padrões",
+    "type": {
+      "win": "Vitória",
+      "loss": "Perda",
+      "feedback": "Feedback"
+    },
+    "form": {
+      "clientPlaceholder": "Cliente (opcional)",
+      "competitorPlaceholder": "Concorrente",
+      "proposalValue": "Valor da proposta",
+      "additionalComments": "Comentários adicionais",
+      "submit": "Enviar relatório",
+      "featureMissing": "Feature específica que faltou",
+      "decisiveFeature": "Feature decisiva",
+      "selectProduct": "Selecione um produto CASE",
+      "selectRegion": "Selecione uma região",
+      "minComment": "Adicione um comentário mais completo",
+      "validationTitle": "Validação",
+      "requiredFields": "Preencha os campos obrigatórios.",
+      "reportSaved": "Relatório salvo",
+      "successUpdate": "Field Intelligence atualizado com sucesso."
+    },
+    "reasons": {
+      "price": "Preço",
+      "feature_technical": "Feature técnica",
+      "availability": "Disponibilidade / prazo",
+      "support": "Rede de suporte / peças",
+      "financing": "Financiamento",
+      "relationship": "Relacionamento com dealer",
+      "other": "Outro"
+    },
+    "metrics": {
+      "winRate": "Taxa de Vitória",
+      "losses": "Perdas",
+      "topLossReason": "Principal Motivo de Perda",
+      "topFeatureRequest": "Feature mais Solicitada",
+      "mostLostTo": "Maior Concorrente (Perdas)"
+    },
+    "charts": {
+      "lossReasons": "Motivos de perda",
+      "mostRequested": "Features mais solicitadas",
+      "lossesByCompetitor": "Perdas por concorrente",
+      "competitivePattern": "Padrão competitivo real que deve alimentar benchmark e roadmap.",
+      "analyzeAi": "Analisar com IA"
+    },
+    "recentReports": "Relatórios recentes",
+    "expand": "Expandir",
+    "hide": "Ocultar",
+    "details": {
+      "lostTo": "Perdemos para:",
+      "wonAgainst": "Vencemos contra:",
+      "missingFeature": "Feature missing:",
+      "decisiveFeature": "Feature decisiva:",
+      "value": "Valor:"
+    }
+  },
+  "scanner": {
+    "title": "Web Scanner",
+    "subtitle": "Cérebro analítico com filtros por família, prioridade, autocomplete competitivo e sinais automáticos de gap/vantagem.",
+    "searchPlaceholder": "Inserir modelo do concorrente ou produto CASE",
+    "focusReceived": "Foco recebido do Dashboard/Scanner:",
+    "noModelsFound": "Nenhum modelo encontrado na base de dados. Tente outro termo.",
+    "filters": {
+      "allFamilies": "Todas as famílias",
+      "allRegions": "Todas as regiões",
+      "allPriorities": "Todas as prioridades"
+    },
+    "actions": {
+      "generateAnalysis": "Gerar análise",
+      "analyzing": "Analisando...",
+      "clearInsights": "Limpar insights",
+      "convertToTask": "Converter em Task",
+      "viewDetails": "Ver detalhes",
+      "source": "Fonte"
+    },
+    "status": {
+      "analyzingCompetitors": "Analisando {{total}} concorrentes contra {{count}} produtos CASE...",
+      "signals": "sinais",
+      "highPriority": "alta",
+      "families": "famílias"
+    },
+    "correlatedProduct": "Produto correlacionado",
+    "insightStatus": {
+      "new": "NOVO",
+      "converted": "Convertido",
+      "internalData": "Dados internos da plataforma",
+      "convertedToast": "Insight convertido em task de engenharia"
+    }
+  },
+  "convergence": {
+    "title": "Construction-Ag Convergence",
+    "desc": "Análise de cross-over tecnológico entre os segmentos de Construção e Agricultura, otimizando o TCO através de implementos especializados e automação.",
+    "ghgReduction": "Redução Potencial de Carbono",
+    "plugPlay": "Implementos Plug & Play",
+    "maintReduction": "Redução de Manutenção Corretiva",
+    "setupOp": "Configuração da Operação",
+    "setupDesc": "Selecione a máquina base e o segmento para simular o ROI de automação e sinergia hidráulica.",
+    "baseMachine": "Máquina Base",
+    "selectMachine": "Selecione uma máquina",
+    "segment": "Segmento / Aplicação",
+    "selectSegment": "Selecione o segmento",
+    "insightsTitle": "Nexus Insights (IA)",
+    "feasibility": "Viabilidade Técnica",
+    "hydraulicReq": "Requisito Hidráulico",
+    "aiRecommendation": "Recomendação Nexus AI",
+    "baseAsset": "Ativo Base CASE",
+    "nexusMatchmaker": "Nexus Matchmaker",
+    "valPressureFlow": "Validação de Pressão/Vazão",
+    "approvedImplement": "Implemento Homologado",
+    "tcoProjection": "Projeção de TCO (Acumulado)",
+    "tradSetup": "Setup Tradicional",
+    "hybridSetup": "Setup Híbrido Nexus",
+    "benefitsMetrics": "Métricas de Benefício (%)",
+    "ghg": "Redução GEE",
+    "opexTco": "Opex/TCO",
+    "failuresMaint": "Failures/Maint",
+    "technicalDetails": {
+      "ghg": {
+        "title": "Detalhamento: Redução GEE",
+        "content": "A redução de emissões é alcançada através da otimização do ciclo de trabalho e da eletrificação de implementos. Em operações sucroenergéticas, o uso de máquinas de construção otimizadas reduz o consumo de combustível por tonelada movimentada em até 22%."
+      },
+      "opexTco": {
+        "title": "Detalhamento: Opex/TCO",
+        "content": "A convergência permite o compartilhamento de peças comuns entre frotas de construção e agrícolas (PMP). O TCO é reduzido pela diluição do custo de manutenção e pela maior versatilidade da máquina, que opera em múltiplas janelas de safra."
+      },
+      "failuresMaint": {
+        "title": "Detalhamento: Manutenção e Falhas",
+        "content": "Sistemas hidráulicos redundantes e telemetria avançada permitem a manutenção preditiva. O uso de implementos homologados reduz o estresse térmico no sistema hidráulico, aumentando a vida útil dos componentes em 15%."
+      }
+    },
+    "machines": {
+      "pa_carregadeira": "Pá Carregadeira",
+      "escavadeira": "Escavadeira",
+      "minicarregadeira": "Minicarregadeira",
+      "retroescavadeira": "Retroescavadeira",
+      "motoniveladora": "Motoniveladora",
+      "telehandler": "Telehandler"
+    },
+    "segments": {
+      "sucroenergetico": "Sucroenergético",
+      "graos": "Grãos",
+      "fertilizantes": "Fertilizantes",
+      "florestal": "Florestal",
+      "aves": "Avicultura",
+      "pecuaria": "Pecuária",
+      "leite": "Pecuária de Leite",
+      "cafe": "Cafeicultura",
+      "curvas_nivel": "Curvas de Nível",
+      "algodao": "Algodão"
+    },
+    "feasibilityLevels": {
+      "Medium": "Média",
+      "High": "Alta",
+      "Very High": "Muito Alta"
+    },
+    "simData": {
+      "pa_carregadeira": {
+        "sucroenergetico": {
+          "hydraulic": "High Flow (120 L/min)",
+          "insight": "Vazão constante ideal para vassouras coletoras e movimentação de bagaço em usinas.",
+          "implement": "Vassoura / Caçamba Bagaço"
+        },
+        "graos": {
+          "hydraulic": "Standard Flow",
+          "insight": "Caçamba de alta capacidade otimiza o carregamento de grãos em armazéns e portos.",
+          "implement": "Caçamba Grãos"
+        },
+        "fertilizantes": {
+          "hydraulic": "Corrosion Protection",
+          "insight": "Pintura especial e vedação de componentes contra ambiente salino e corrosivo.",
+          "implement": "Kit Fertilizante"
+        },
+        "pecuaria": {
+          "hydraulic": "Standard",
+          "insight": "Essencial para carregamento de silagem e limpeza de pátios de confinamento.",
+          "implement": "Garfo Silagem"
+        }
+      },
+      "escavadeira": {
+        "florestal": {
+          "hydraulic": "Hammer Circuit",
+          "insight": "Sistema Load Sensing otimiza o ciclo de processamento de madeira com cabeçotes harvester.",
+          "implement": "Cabeçote Harvester"
+        },
+        "sucroenergetico": {
+          "hydraulic": "Standard",
+          "insight": "Ideal para limpeza de canais de vinhaça e construção de curvas de nível.",
+          "implement": "Caçamba de Limpeza"
+        },
+        "graos": {
+          "hydraulic": "Standard",
+          "insight": "Execução de drenagem e sistematização de solos para evitar alagamentos em lavouras.",
+          "implement": "Caçamba de Vala"
+        }
+      },
+      "minicarregadeira": {
+        "aves": {
+          "hydraulic": "Low Profile",
+          "insight": "Baixa altura e raio de giro zero permitem a limpeza rápida de camas de frango em aviários.",
+          "implement": "Lâmina de Arraste"
+        },
+        "pecuaria": {
+          "hydraulic": "Standard",
+          "insight": "Manuseio ágil de fardos de feno e limpeza de currais em espaços reduzidos.",
+          "implement": "Garfo de Fardos"
+        },
+        "sucroenergetico": {
+          "hydraulic": "High Flow",
+          "insight": "Limpeza de resíduos sob esteiras transportadoras e áreas de difícil acesso em usinas.",
+          "implement": "Vassoura Industrial"
+        }
+      },
+      "retroescavadeira": {
+        "leite": {
+          "hydraulic": "Standard",
+          "insight": "Versatilidade total para manutenção de drenagem, cercas e movimentação de insumos em fazendas leiteiras.",
+          "implement": "Garfo Mulching"
+        },
+        "cafe": {
+          "hydraulic": "Standard",
+          "insight": "Ideal para abertura de valas de adubação e manutenção de estradas internas em terrenos declivosos.",
+          "implement": "Caçamba Estreita"
+        },
+        "aves": {
+          "hydraulic": "Standard",
+          "insight": "Suporte na construção de galpões e movimentação de materiais pesados fora dos aviários.",
+          "implement": "Garfo Palet"
+        }
+      },
+      "motoniveladora": {
+        "curvas_nivel": {
+          "hydraulic": "Precision Control",
+          "insight": "Controle de lâmina milimétrico essencial para a conservação de solo e controle de erosão.",
+          "implement": "Lâmina Curva"
+        },
+        "graos": {
+          "hydraulic": "GPS Ready",
+          "insight": "Nivelamento de precisão para plantio em larga escala, otimizando o tráfego de colheitadeiras.",
+          "implement": "Interface GNSS"
+        }
+      },
+      "telehandler": {
+        "algodao": {
+          "hydraulic": "High Reach",
+          "insight": "Alcance vertical superior e estabilidade para empilhamento de fardos em grandes alturas.",
+          "implement": "Garfo p/ Algodão"
+        },
+        "pecuaria": {
+          "hydraulic": "Standard",
+          "insight": "Alcance telescópico facilita a alimentação de misturadores altos e manutenção de galpões.",
+          "implement": "Caçamba de Mix"
+        }
+      }
+    },
+    "innovation": {
+      "title": "Tendências Globais & Next Gen",
+      "subtitle": "Evolução tecnológica da linha amarela integrada ao ecossistema agro.",
+      "readinessTitle": "Nível de Prontidão Tecnológica (TRL)",
+      "equipmentTitle": "Equipamentos Next Gen p/ Agro",
+      "trends": {
+        "automation": "Automação & GNSS",
+        "electrification": "Eletrificação (EV)",
+        "telematics": "Telemática & IoT",
+        "alt_fuel": "Energias Verdes"
+      }
+    }
+  },
+  "settings": {
+    "title": "Configurações",
+    "subtitle": "Gerencie as preferências da plataforma, chaves de API e interface.",
+    "assistant": "Nexus AI Assistant (Gemini)",
+    "assistantDesc": "Configure sua chave de API do Google Gemini para habilitar as funções de inteligência e análise avançada.",
+    "saveKey": "Salvar Chave",
+    "updateKey": "Atualizar Chave",
+    "removeKey": "Remover Chave",
+    "appearance": "Aparência",
+    "appearanceDesc": "Escolha entre light, dark ou system. Tema atual:",
+    "themes": {
+      "light": {
+        "label": "Claro",
+        "desc": "Superfícies claras para leitura e análise diurna."
+      },
+      "dark": {
+        "label": "Escuro",
+        "desc": "Visual industrial escuro com foco em contraste e densidade."
+      },
+      "system": {
+        "label": "Sistema",
+        "desc": "Segue automaticamente a preferência do dispositivo."
+      }
+    },
+    "operational": {
+      "dataSources": {
+        "title": "Fontes de dados",
+        "desc": "Base central sincronizada entre Portfolio, Dashboard, Benchmarking, Engineering e Scanner."
+      },
+      "export": {
+        "title": "Preferências de exportação",
+        "desc": "CSV e PDF já disponíveis no diretório executivo com filtros ativos."
+      },
+      "notifications": {
+        "title": "Notificações",
+        "desc": "Alertas críticos seguem priorização high/medium/low no Scanner e no Dashboard."
+      }
+    }
+  },
+  "regional": {
+    "title": "Inteligência Regional",
+    "subtitle": "O que cada mercado realmente precisa — e onde nossos gaps importam.",
+    "annualRevenue": "Receita Anual",
+    "casePresence": "Presença CASE",
+    "fieldIntelligence": "Field Intelligence",
+    "decisionsRegistered": "decisões registradas nesta região",
+    "topCompetitors": "Principais Concorrentes",
+    "gapRelevance": "Relevância dos gaps",
+    "demandPriorities": "Prioridades de demanda",
+    "fitMatrix": "Matriz produto × adequação regional",
+    "fitMatrixDesc": "Fit score ponderado por relevância regional, vantagens CASE e gaps que realmente importam.",
+    "exportMatrix": "Exportar matriz",
+    "product": "Produto",
+    "recommendationFor": "🎯 Recomendação para {{regionName}}"
+  },
+  "portfolio": {
+    "title": "Diretório de Portfólio",
+    "subtitle": "Catálogo completo de máquinas e indicadores de engenharia.",
+    "exportCsv": "Exportar CSV",
+    "exportPdf": "Exportar PDF",
+    "compareSelected": "Comparar Selecionados",
+    "overviewTitle": "Visão Geral do Equipamento",
+    "executiveFilters": "Filtros Executivos",
+    "searchPlaceholder": "Buscar modelo, família, motor...",
+    "allFamilies": "Todas as Famílias",
+    "allRegions": "Todas as Regiões",
+    "filters": {
+      "power": "POTÊNCIA BRUTA (HP)",
+      "weight": "PESO OPERACIONAL (LB)"
+    },
+    "modelsCount": "modelos",
+    "evOnly": "Apenas EV",
+    "allPowertrains": "Todos os Motores",
+    "table": {
+      "compare": "Comparar",
+      "model": "Modelo",
+      "family": "Família",
+      "regions": "Regiões",
+      "lifecycle": "Ciclo de Vida",
+      "electric": "Elétrico",
+      "overallScore": "Score Geral"
+    },
+    "csv": {
+      "model": "Modelo",
+      "family": "Família",
+      "category": "Categoria",
+      "powertrain": "Powertrain",
+      "regions": "Regiões",
+      "lifecycle": "Ciclo de Vida",
+      "ev": "EV",
+      "score": "Score"
+    }
+  },
+  "guide": {
+    "title": "Guia da Plataforma",
+    "subtitle": "Como funciona cada módulo, gráfico e funcionalidade do CASE Nexus.",
+    "tabs": {
+      "modules": "📂 Módulos",
+      "flows": "🔄 Fluxos Integrados",
+      "metrics": "📊 Métricas",
+      "assistant": "🤖 Assistente IA"
+    },
+    "common": {
+      "open": "Abrir →",
+      "features": "Funcionalidades",
+      "charts": "Gráficos e Visualizações",
+      "tips": "Dicas de uso",
+      "askAssistant": "Perguntar ao assistente",
+      "promptExample": "Exemplo de pergunta para a IA"
+    },
+    "sections": {
+      "dashboard": {
+        "title": "Dashboard",
+        "subtitle": "Visão executiva consolidada",
+        "description": "Painel principal que unifica dados de portfólio, competitividade e sinais de mercado. É o ponto de partida para qualquer análise.",
+        "features": {
+          "kpis": "KPIs superiores",
+          "kpis_detail": "Total de máquinas, score médio do portfólio, sinais urgentes e famílias cobertas. Leitura rápida de saúde.",
+          "map": "Mapa global interativo",
+          "map_detail": "Pontos de presença CASE e pressão competitiva. Clique numa região para ver detalhes (máquinas, concorrentes, fit).",
+          "compare": "Comparativo Regional A vs B",
+          "compare_detail": "Selecione 2 regiões nos dropdowns para gerar radar comparativo com demanda, cobertura e gaps.",
+          "scanner": "Sinais urgentes do Scanner",
+          "scanner_detail": "Top 3 sinais de alta prioridade. Clique para navegar ao Scanner com foco no sinal.",
+          "video": "Vídeo scroll-scrub",
+          "video_detail": "Vídeo institucional sincronizado com o scroll da página."
+        },
+        "tips": [
+          "Clique numa região no mapa para abrir o dialog com máquinas cobertas e concorrentes presentes",
+          "Se sinais urgentes > 0, clique para investigar no Scanner",
+          "Use o comparativo A vs B para preparar apresentações executivas"
+        ],
+        "examplePrompt": "Quais são os 3 maiores riscos competitivos do portfólio CASE hoje?"
+      },
+      "portfolio": {
+        "title": "Portfolio Directory",
+        "subtitle": "Catálogo completo de máquinas",
+        "description": "Diretório com 42+ máquinas CASE, filtros multi-dimensionais (família, região, potência, peso, EV), seleção para comparação e exportação CSV.",
+        "features": {
+          "search": "Busca livre",
+          "search_detail": "Pesquise por modelo, motor, família ou região. Ex.: '821G', 'FPT', 'Electric'.",
+          "filters": "Filtros combinados",
+          "filters_detail": "Família, região, categoria (Heavy/Light), faixa de potência (0-400hp), faixa de peso (0-120.000lb), somente EV.",
+          "select": "Seleção para comparar",
+          "select_detail": "Marque 2-4 máquinas com checkbox → clique 'Comparar selecionados' → vai para Benchmarking.",
+          "export": "Export CSV",
+          "export_detail": "Gera arquivo CSV com todos os dados filtrados para uso em planilhas.",
+          "score": "Score geral",
+          "score_detail": "Badge colorido: 🟢 ≥85 (forte), 🟡 75-84 (aceitável), 🔴 <75 (gap).",
+          "nav": "Navegação rápida",
+          "nav_detail": "Clique na seta (→) ao lado de qualquer máquina para ir ao Engineering Subsystems."
+        },
+        "tips": [
+          "Para ver escavadeiras acima de 200hp na América do Norte: Família 'E-Series' + Região 'North America' + Potência 200-400",
+          "Selecione 2 máquinas da mesma família para comparação direta no Benchmarking",
+          "Use o filtro EV para mapear a penetração de plataformas elétricas"
+        ],
+        "examplePrompt": "Liste todas as máquinas CASE com score abaixo de 80 e sugira prioridades de melhoria."
+      },
+      "benchmarking": {
+        "title": "Competitor Benchmarking",
+        "subtitle": "CASE vs concorrência em 3 camadas",
+        "description": "Comparação técnica organizada em 3 abas: Comparação direta, Trajetória Competitiva e Priorização de Portfólio.",
+        "features": {
+          "compare": "Aba Comparação",
+          "compare_detail": "Radar CASE vs concorrente em 5 eixos (Powertrain, Ergonomics, Tech, Maintenance, Price/TCO) + tabela de specs lado a lado.",
+          "trajectory": "Aba Trajetória Competitiva",
+          "trajectory_detail": "Timeline com milestones passados e projeções futuras por marca (Cat, Komatsu, Volvo, Deere, JCB).",
+          "prioritization": "Aba Priorização de Portfólio",
+          "prioritization_detail": "Matriz estratégica posicionando famílias por score vs pressão competitiva (Líderes, Apostas, Vacas Leiteiras, Questionáveis).",
+          "roadmap": "Enviar para Roadmap",
+          "roadmap_detail": "Na aba Trajetória, converta projeções de concorrentes em sugestões para o Next Gen Roadmap."
+        },
+        "tips": [
+          "Para apresentar ao board: Aba Comparação → Selecione CX300E → Clique Komatsu PC300 → Use radar + tabela",
+          "Na Trajetória, monitore movimentos de Cat e Komatsu em machine control e eletrificação",
+          "Use 'Enviar para Roadmap' quando identificar um movimento competitivo que exige resposta"
+        ],
+        "examplePrompt": "Compare a 821G com os 3 principais concorrentes e mostre onde estamos mais vulneráveis."
+      },
+      "subsystems": {
+        "title": "Engineering Subsystems",
+        "subtitle": "Drill-down por subsistema de engenharia",
+        "description": "Decomposição técnica de cada máquina em 6 subsistemas (Structure, Powertrain, Hydraulics, Transmission, Implements, Cabin) com dados reais vs concorrência.",
+        "features": {
+          "selection": "Seleção de máquina",
+          "selection_detail": "Cards horizontais com todas as máquinas. Clique para selecionar. Score exibido abaixo do nome.",
+          "tabs": "6 abas de subsistema",
+          "tabs_detail": "Structure (EST), Powertrain (PWR), Hydraulics (HID), Transmission (TRN), Implements (IMP), Cabin (CAB).",
+          "analysis": "Análise + Gap",
+          "analysis_detail": "Texto de análise do estado atual + box amarelo com o principal gap identificado.",
+          "radar": "Radar de engenharia",
+          "radar_detail": "SVG comparando CASE vs concorrente em todos os 6 eixos simultaneamente.",
+          "competitors": "Cards de concorrentes",
+          "competitors_detail": "Score por concorrente com delta (▲/▼) e descrição da posição competitiva.",
+          "components": "Componentes detalhados",
+          "components_detail": "Expande árvore de subcomponentes com specs públicos, dados internos editáveis e oportunidades.",
+          "ai": "Analisar com IA",
+          "ai_detail": "Envia o componente com specs, gaps e concorrência para análise pelo NexusChat."
+        },
+        "tips": [
+          "Para analisar gap hidráulico: Selecione CX300E → aba Hydraulics → veja gap + score → 'Analisar com IA'",
+          "Cada campo de dados internos pode ser editado — ideal para validar specs reais vs públicos",
+          "A barra de progresso de componentes mostra quantos campos já foram validados"
+        ],
+        "examplePrompt": "Analise o subsistema de hidráulica da CX300E e sugira 3 ações para MY2028."
+      },
+      "regional": {
+        "title": "Regional Intelligence",
+        "subtitle": "Demanda e competitividade por região",
+        "description": "Perfil de 5 macro-regiões: North America, Europe, Latin America, Middle East & Africa, Asia Pacific. Cada uma com demanda, gaps e recomendações estratégicas.",
+        "features": {
+          "profile": "Perfil da região",
+          "profile_detail": "Tamanho de mercado, revenue anual, presença CASE, top concorrentes regionais.",
+          "demand": "Prioridades de demanda",
+          "demand_detail": "Lista ordenada de features exigidas (Machine Control, Telemática, Eletrificação etc.) com peso e tendência.",
+          "gap": "Relevância de gaps",
+          "gap_detail": "Cada gap CASE classificado como CRÍTICO, ALTO, MÉDIO etc. com score numérico.",
+          "machines": "Máquinas cobertas",
+          "machines_detail": "Quais produtos CASE atendem a região + score de fit regional (0-100).",
+          "recommendations": "Recomendações estratégicas",
+          "recommendations_detail": "3 ações priorizadas por região, contextualizadas ao mercado local."
+        },
+        "tips": [
+          "LATAM valoriza robustez e SCR-only, NÃO Machine Control 3D — a estratégia deve refletir isso",
+          "Europa e NA puxam eletrificação e machine control — priorize investimento de roadmap nessas regiões",
+          "Fit regional abaixo de 70 indica que o produto precisa de adaptação para a região"
+        ],
+        "examplePrompt": "O que diferencia a estratégia CASE ideal para LATAM vs Europa?"
+      },
+      "roadmap": {
+        "title": "Next Gen Roadmap",
+        "subtitle": "Evolução tecnológica do portfólio",
+        "description": "Centro de planejamento para o Engenheiro de Portfólio. Conecta maturidade, gaps, investimento e timeline de tecnologia em 3 fases (MY2027-MY2029).",
+        "features": {
+          "scorecard": "Portfolio Maturity Scorecard",
+          "scorecard_detail": "5 KPIs: Readiness (% modelos ≥85), Gap Coverage (% itens em ação), EV Penetration, Competitive Parity, Field→Roadmap.",
+          "heatmap": "Subsystem Gap Heatmap",
+          "heatmap_detail": "Tabela interativa famílias × 6 subsistemas com scores e badges de roadmap. Clique navega para Subsystems.",
+          "kanban": "Board de fases (Kanban)",
+          "kanban_detail": "3 colunas: Fase 1 (MY2027), Fase 2 (MY2028), Fase 3 (MY2029). Cards coloridos por prioridade e custo.",
+          "investment": "Sumário de investimento",
+          "investment_detail": "Barras por fase + total geral em $M. Mostra distribuição do investimento.",
+          "impact": "Impacto projetado",
+          "impact_detail": "Gráfico de linhas mostrando score CASE vs linha do concorrente ao longo das 3 fases.",
+          "timeline": "Technology Timeline",
+          "timeline_detail": "Gantt horizontal por subsistema. Barras coloridas por prioridade. Seção de dependências cruzadas.",
+          "status": "Controle de status",
+          "status_detail": "Dropdown por item: Proposto → Aprovado → Em Desenvolvimento → Implementado (ou Adiado/Rejeitado)."
+        },
+        "tips": [
+          "Fase 1 (MY2027) foca em quick wins: pesagem padrão, display upgrade, undercarriage premium",
+          "Grade Assist nativo (road-004) é o item de maior Δ Score (+13) — prioridade crítica",
+          "Use o heatmap para identificar quais famílias estão mais fracas em quais subsistemas"
+        ],
+        "examplePrompt": "Qual o retorno competitivo do Grade Assist nativo se implementado em 2028?"
+      },
+      "field": {
+        "title": "Field Intelligence",
+        "subtitle": "Dados de campo (vendas, perdas, feedback)",
+        "description": "Captura e análise de relatórios de campo para fechar o loop engenharia ↔ vendas. Wins, losses e feedbacks alimentam automaticamente o roadmap.",
+        "features": {
+          "form": "Formulário de relatório",
+          "form_detail": "Tipo (Win/Loss/Feedback), Produto CASE, Região, Concorrente, Motivo, Feature faltante/decisiva, Valor, Comentários.",
+          "kpis": "KPIs automáticos",
+          "kpis_detail": "Win Rate, Losses, Top Loss Reason, Top Feature Request, Most Lost To — calculados em tempo real.",
+          "reasons": "Gráfico de motivos de perda",
+          "reasons_detail": "Pie chart (rosca) com distribuição dos motivos das losses.",
+          "requested": "Features mais solicitadas",
+          "requested_detail": "Barras horizontais com top 5 features agrupadas por tema (Machine Control, CVT, People Detection etc.).",
+          "competitors": "Perdas por concorrente",
+          "competitors_detail": "Barras mostrando quais marcas vencem mais a CASE.",
+          "feed": "Feed-forward automático",
+          "feed_detail": "Quando um tema se repete 2+ vezes, gera sugestão automática no Next Gen Roadmap."
+        },
+        "tips": [
+          "Registre TODAS as losses, não só as importantes — o padrão emerge da frequência",
+          "O campo 'Feature que faltou' alimenta diretamente as sugestões de roadmap",
+          "Use 'Analisar com IA' para gerar relatório estratégico a partir dos padrões de campo"
+        ],
+        "examplePrompt": "Com base nas losses recentes, qual feature deveria ser prioridade #1?"
+      },
+      "scanner": {
+        "title": "Web Scanner",
+        "subtitle": "Inteligência competitiva automatizada",
+        "description": "Motor analítico que compara automaticamente produtos CASE vs concorrentes e gera sinais de gap ou vantagem com prioridade (High/Medium/Low).",
+        "features": {
+          "autocomplete": "Autocomplete inteligente",
+          "autocomplete_detail": "Pesquise qualquer produto CASE ou concorrente. O sistema encontra e correlaciona automaticamente.",
+          "analysis": "Gerar análise",
+          "analysis_detail": "Clique para cruzar specs e gerar insights. Se um produto está selecionado, foca nele; senão, analisa tudo.",
+          "filters": "Filtros combinados",
+          "filters_detail": "Família CASE, Região e Prioridade (High/Medium/Low).",
+          "signals": "Sinais priorizados",
+          "signals_detail": "Cards com ícone por severidade (🔴 High, 🟡 Medium, 🟢 Low), descrição, ação e fonte.",
+          "task": "Converter em Task",
+          "task_detail": "Transforma o sinal em task de engenharia e navega para Subsystems com o contexto correto.",
+          "feed": "Feed do Field Intelligence",
+          "feed_detail": "Losses repetidas do campo aparecem como sinais automáticos com badge 'NOVO'."
+        },
+        "tips": [
+          "Selecione um concorrente específico antes de clicar 'Gerar análise' para resultados focados",
+          "Sinais 'High' devem ser tratados como prioridade — use 'Converter em Task' imediatamente",
+          "O Scanner se auto-alimenta: dados do Field Intelligence geram sinais automaticamente"
+        ],
+        "examplePrompt": "Analise os sinais High do Scanner e priorize os 3 mais urgentes para ação imediata."
+      },
+      "convergence": {
+        "title": "Construction-Ag Convergence",
+        "subtitle": "Simulador de Setup de Operação Híbrida",
+        "description": "MatchMaker inteligente que valida e projeta o encaixe de máquinas de construção (linha amarela) no setor do agronegócio, gerando previsões de TCO e redução de GEE.",
+        "features": {
+          "engine": "Motor de Simulação",
+          "engine_detail": "Cruza a Máquina Base (Pá, Escavadeira, Skid) com um Segmento Agrícola (Sucroenergético, Florestal, Pecuária).",
+          "insights": "NEXUS Insights",
+          "insights_detail": "Retorna instantaneamente o nível de factibilidade e as necessidades de estabilização hidráulica/tecnológica.",
+          "flow": "Fluxo Componentizado",
+          "flow_detail": "Representação visual do processo (Máquina → Validação IA → Implemento Compatível).",
+          "dashboards": "Dashboards NEXUS",
+          "dashboards_detail": "Monitora os KPIs de Custo Acumulado (TCO) vs Operação Padrão. Mostra os benefícios de Manutenção e GEE."
+        },
+        "tips": [
+          "Use as opções Retroescavadeira ou Minicarregadeira para ver os altos saltos de produtividade em operações de Pecuária.",
+          "O botão do Assistente (NEXUS AI) lerá a página e te dirá qual é a aplicabilidade de cada conjunto."
+        ],
+        "examplePrompt": "Como a Pá Carregadeira (Série E) se comporta atuando no setor sucroenergético?"
+      }
+    },
+    "flows": {
+      "intro": "Os módulos se conectam por fluxos que guiam a análise do início à ação. Cada fluxo mostra um caminho típico de uso da plataforma.",
+      "dashboard_roadmap": "Dashboard → Ação de Roadmap",
+      "field_roadmap": "Campo → Roadmap",
+      "regional_portfolio": "Regional → Portfólio",
+      "benchmarking_roadmap": "Benchmarking → Roadmap",
+      "full_analysis": "Análise completa de máquina"
+    },
+    "metrics": {
+      "intro": "Glossário das métricas usadas em toda a plataforma. Todas as escalas são numéricas e as cores seguem o padrão universal.",
+      "glossaryTitle": "Glossário de métricas",
+      "overall": "Score geral",
+      "overall_desc": "Média dos 5 eixos de avaliação",
+      "subsystem": "Score de subsistema",
+      "subsystem_desc": "Avaliação ponderada do subsistema",
+      "delta": "Delta (Δ)",
+      "delta_desc": "Melhoria projetada após implementação",
+      "fit": "Fit regional",
+      "fit_desc": "Adequação da máquina à região",
+      "winrate": "Win Rate",
+      "winrate_desc": "% de vendas ganhas sobre total de decisões",
+      "coverage": "Gap Coverage",
+      "coverage_desc": "% de itens critical/high em desenvolvimento",
+      "readiness": "Portfolio Readiness",
+      "readiness_desc": "% de modelos com score ≥85",
+      "parity": "Competitive Parity",
+      "parity_desc": "Delta médio CASE vs melhor concorrente"
+    },
+    "colors": {
+      "title": "Legenda de cores",
+      "green": "🟢 Verde",
+      "green_desc": "Score ≥85, vantagem, sucesso",
+      "yellow": "🟡 Amarelo",
+      "yellow_desc": "Score 75-84, atenção",
+      "red": "🔴 Vermelho",
+      "red_desc": "Score <75, gap crítico",
+      "blue": "🔵 Azul",
+      "blue_desc": "CASE, ação principal"
+    },
+    "assistant": {
+      "title": "NexusChat — Assistente IA",
+      "subtitle": "Disponível em qualquer página via ícone 💬 no canto inferior direito",
+      "howItWorks": "Como funciona",
+      "step1": "1. Clique no ícone de chat (💬) no canto inferior direito",
+      "step2": "2. Digite sua pergunta ou use um dos prompts sugeridos",
+      "step3": "3. A IA recebe automaticamente o contexto da página atual",
+      "step4": "4. Respostas são geradas com streaming em tempo real",
+      "autoContext": "Contexto automático por página",
+      "analyzeBtn": "Botão \"Analisar com IA\"",
+      "analyzeBtn_desc": "que preenche o chat automaticamente com um prompt contextualizado — ideal para análises profundas de componentes, itens de roadmap, padrões de campo ou sinais competitivos.",
+      "exampleQuestions": "Exemplos de perguntas"
+    }
+  }
+}
