@@ -1,6 +1,7 @@
 import { Database, Swords, Lightbulb } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { KpiCard } from "@/components/KpiCard";
 import {
   caseMachines,
@@ -32,6 +33,7 @@ const TOTAL_MACHINE_FAMILIES = new Set(caseMachines.map((m) => m.family)).size;
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [activeRegion, setActiveRegion] = useState<string>("all");
   const [selectedRegion, setSelectedRegion] = useState<(typeof regionDemand)[number] | null>(null);
 
@@ -51,20 +53,20 @@ export default function Dashboard() {
 
   // KPI values
   const trackedModelsValue = activeRegionData ? String(activeRegionData.equipment.length) : String(caseMachines.length);
-  const trackedModelsSubtitle = activeRegionData ? `${activeRegionData.region} active lineup` : `${caseMachines.length} modelos do manual`;
-  const trackedModelsTrend = activeRegionData ? activeRegionData.trend : "Base completa sincronizada";
+  const trackedModelsSubtitle = activeRegionData ? t("dashboard.activeLineup", { region: activeRegionData.region }) : t("dashboard.modelsSubtitle", { count: caseMachines.length });
+  const trackedModelsTrend = activeRegionData ? activeRegionData.trend : t("dashboard.fullSyncedBase");
 
   const competitorCountForRegion = activeRegionData ? competitorPresence.filter((p) => p.region === activeRegionData.region).length : competitors.length;
   const competitorManufacturers = new Set(competitors.map((c) => c.name.split(" ")[0])).size;
   const competitorsValue = String(competitorCountForRegion);
-  const competitorsSubtitle = activeRegionData ? `Pontos de pressão em ${activeRegionData.region}` : `${competitorManufacturers} fabricantes globais`;
+  const competitorsSubtitle = activeRegionData ? t("dashboard.pressurePoints", { region: activeRegionData.region }) : t("dashboard.globalManufacturers", { count: competitorManufacturers });
   const competitorsTrend = activeRegionData
-    ? `${competitorPresence.filter((p) => p.region === activeRegionData.region && p.pressure === "high").length} sinais de alta pressão`
-    : `Base competitiva ativa em ${competitorPresence.length} hotspots`;
+    ? t("dashboard.highPressureSignals", { count: competitorPresence.filter((p) => p.region === activeRegionData.region && p.pressure === "high").length })
+    : t("dashboard.activeCompetitiveBase", { count: competitorPresence.length });
 
   const insightsValue = activeRegionData ? String(Math.max(2, activeRegionData.equipment.length)) : "5";
-  const insightsSubtitle = activeRegionData ? `Priority focus: ${activeRegionData.equipment.slice(0, 2).join(" · ")}` : "3 high priority";
-  const insightsTrend = activeRegionData ? `Regional signal: ${activeRegionData.trend}` : "2 require immediate action";
+  const insightsSubtitle = activeRegionData ? t("dashboard.insights.priorityFocus", { equipment: activeRegionData.equipment.slice(0, 2).join(" · ") }) : t("dashboard.insights.highPriority");
+  const insightsTrend = activeRegionData ? t("dashboard.insights.regionalSignal", { trend: activeRegionData.trend }) : t("dashboard.insights.immediateAction");
 
   // Executive stats
   const selectedRegionMachines = useMemo(() => activeRegionData ? getMachinesForRegion(activeRegionData.region) : [], [activeRegionData]);
@@ -89,21 +91,21 @@ export default function Dashboard() {
   return (
     <div className="p-6 space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Macro View — Global Operations</h1>
-        <p className="text-sm text-muted-foreground mt-1">Real-time portfolio intelligence across all regions</p>
+        <h1 className="text-2xl font-bold">{t("dashboard.title")}</h1>
+        <p className="text-sm text-muted-foreground mt-1">{t("dashboard.subtitle")}</p>
       </div>
 
       {/* Regional Filter */}
       <div className="flex flex-col gap-3 rounded-xl border border-border bg-card/60 p-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Regional Filter</p>
-          <p className="mt-1 text-sm text-foreground/90">Atualize globo, KPIs e cards para uma leitura regional específica.</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{t("dashboard.regionalFilter")}</p>
+          <p className="mt-1 text-sm text-foreground/90">{t("dashboard.regionalFilterDesc")}</p>
         </div>
         <div className="w-full max-w-xs">
           <Select value={activeRegion} onValueChange={setActiveRegion}>
-            <SelectTrigger><SelectValue placeholder="Selecionar região" /></SelectTrigger>
+            <SelectTrigger><SelectValue placeholder={t("dashboard.selectRegion")} /></SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Todas as regiões</SelectItem>
+              <SelectItem value="all">{t("dashboard.allRegions")}</SelectItem>
               {regionDemand.map((r) => (<SelectItem key={r.region} value={r.region}>{r.region}</SelectItem>))}
             </SelectContent>
           </Select>
@@ -113,16 +115,16 @@ export default function Dashboard() {
       <div key={activeRegion} className="space-y-6 animate-in fade-in-0 slide-in-from-bottom-2 duration-500">
         {/* KPIs */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <KpiCard icon={Database} title="CASE Models Tracked" value={trackedModelsValue} subtitle={trackedModelsSubtitle} trend={trackedModelsTrend} />
-          <KpiCard icon={Swords} title="Competitor Models Mapped" value={competitorsValue} subtitle={competitorsSubtitle} trend={competitorsTrend} accentClass="text-accent" />
-          <KpiCard icon={Lightbulb} title="Pending Engineering Insights" value={insightsValue} subtitle={insightsSubtitle} trend={insightsTrend} accentClass="text-chart-warning" />
+          <KpiCard icon={Database} title={t("dashboard.kpiTracked")} value={trackedModelsValue} subtitle={trackedModelsSubtitle} trend={trackedModelsTrend} />
+          <KpiCard icon={Swords} title={t("dashboard.kpiCompetitors")} value={competitorsValue} subtitle={competitorsSubtitle} trend={competitorsTrend} accentClass="text-accent" />
+          <KpiCard icon={Lightbulb} title={t("dashboard.kpiInsights")} value={insightsValue} subtitle={insightsSubtitle} trend={insightsTrend} accentClass="text-chart-warning" />
         </div>
 
         {/* Globe + Region Cards */}
         <div className="kpi-card section-enter relative overflow-hidden" style={{ animationDelay: "100ms" }}>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold">Global Deployment Map</h2>
-            <span className="text-xs text-muted-foreground font-mono">LIVE TRACKING</span>
+            <h2 className="text-lg font-semibold">{t("dashboard.mapTitle")}</h2>
+            <span className="text-xs text-muted-foreground font-mono">{t("dashboard.liveTracking")}</span>
           </div>
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(280px,0.9fr)]">
             <div className="flex flex-col gap-4">
@@ -149,9 +151,9 @@ export default function Dashboard() {
                     {region.equipmentIds.map((id, idx) => { const m = machineById.get(id); if (!m) return null; return (<div key={id} className="flex items-center gap-2 rounded-full border border-border bg-background/50 py-1 pl-1 pr-2"><EquipmentImage src={m.image} alt={m.imageAlt} fallbackLabel={m.model} className="h-7 w-9 shrink-0 rounded-full border-0" /><span className="text-[10px] text-foreground/90">{region.equipment[idx] ?? m.model}</span></div>); })}
                   </div>
                   <div className="mt-3 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
-                    <span className="rounded-full border border-border bg-background/60 px-2.5 py-1">{competitorPresence.filter((p) => p.region === region.region).length} hotspots competitivos</span>
+                    <span className="rounded-full border border-border bg-background/60 px-2.5 py-1">{competitorPresence.filter((p) => p.region === region.region).length} {t("dashboard.hotspots")}</span>
                   </div>
-                  <Button variant="ghost" size="sm" className="mt-3 px-0 text-xs text-accent hover:bg-transparent hover:text-accent" onClick={() => setSelectedRegion(region)}>Abrir mapa detalhado</Button>
+                  <Button variant="ghost" size="sm" className="mt-3 px-0 text-xs text-accent hover:bg-transparent hover:text-accent" onClick={() => setSelectedRegion(region)}>{t("dashboard.openDetailedMap")}</Button>
                 </div>
               ))}
             </div>
@@ -163,29 +165,29 @@ export default function Dashboard() {
           <section className="rounded-[28px] border border-border bg-card p-5 shadow-[0_18px_40px_hsl(var(--foreground)/0.05)]">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Executive regional read</p>
-                <h2 className="mt-2 text-xl font-semibold text-foreground">{activeRegionData ? `${activeRegionData.region} operating brief` : "Global portfolio brief"}</h2>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{t("dashboard.executiveBriefTitle")}</p>
+                <h2 className="mt-2 text-xl font-semibold text-foreground">{activeRegionData ? t("dashboard.regionalOperatingBrief", { region: activeRegionData.region }) : t("dashboard.globalPortfolioBrief")}</h2>
                 <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
                   {activeRegionData
-                    ? `${activeRegionData.region} combina ${activeRegionData.equipmentIds.length} modelos ativos, ${executiveStats?.familyCount ?? 0} famílias e ${executiveStats?.electrifiedCount ?? 0} plataformas eletrificadas no lineup monitorado.`
-                    : `A plataforma consolida ${caseMachines.length} máquinas CASE, ${competitors.length} rivais e ${competitorPresence.length} hotspots competitivos na mesma leitura operacional.`}
+                    ? t("dashboard.regionalBriefDesc", { region: activeRegionData.region, machines: activeRegionData.equipmentIds.length, families: executiveStats?.familyCount ?? 0, electrified: executiveStats?.electrifiedCount ?? 0 })
+                    : t("dashboard.globalBriefDesc", { machines: caseMachines.length, competitors: competitors.length, hotspots: competitorPresence.length })}
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
-                <Button variant="outline" onClick={() => navigate(`/portfolio${activeRegionData ? `?region=${encodeURIComponent(activeRegionData.region)}` : ""}`)}>Abrir Portfolio</Button>
-                <Button onClick={() => navigate(`/benchmarking${executiveStats?.primaryMachineId ? `?case=${executiveStats.primaryMachineId}${activeRegionData ? `&region=${encodeURIComponent(activeRegionData.region)}` : ""}` : ""}`)}>Abrir Benchmarking</Button>
+                <Button variant="outline" onClick={() => navigate(`/portfolio${activeRegionData ? `?region=${encodeURIComponent(activeRegionData.region)}` : ""}`)}>{t("dashboard.openPortfolio")}</Button>
+                <Button onClick={() => navigate(`/benchmarking${executiveStats?.primaryMachineId ? `?case=${executiveStats.primaryMachineId}${activeRegionData ? `&region=${encodeURIComponent(activeRegionData.region)}` : ""}` : ""}`)}>{t("dashboard.openBenchmarking")}</Button>
               </div>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-border bg-secondary/20 p-4"><p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Famílias monitoradas</p><p className="mt-2 text-2xl font-semibold text-foreground">{activeRegionData ? executiveStats?.familyCount ?? 0 : TOTAL_MACHINE_FAMILIES}</p></div>
-              <div className="rounded-2xl border border-border bg-secondary/20 p-4"><p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Plataformas EV</p><p className="mt-2 text-2xl font-semibold text-foreground">{activeRegionData ? executiveStats?.electrifiedCount ?? 0 : caseMachines.filter((m) => m.electrified).length}</p></div>
-              <div className="rounded-2xl border border-border bg-secondary/20 p-4"><p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Score médio</p><p className="mt-2 text-2xl font-semibold text-foreground">{activeRegionData ? executiveStats?.averageScore ?? "—" : Math.round(caseMachines.reduce((sum, m) => sum + (getMachineEngineeringProfile(m.id)?.overallScore ?? 0), 0) / caseMachines.length)}</p></div>
+              <div className="rounded-2xl border border-border bg-secondary/20 p-4"><p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{t("dashboard.trackedFamilies")}</p><p className="mt-2 text-2xl font-semibold text-foreground">{activeRegionData ? executiveStats?.familyCount ?? 0 : TOTAL_MACHINE_FAMILIES}</p></div>
+              <div className="rounded-2xl border border-border bg-secondary/20 p-4"><p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{t("dashboard.evPlatforms")}</p><p className="mt-2 text-2xl font-semibold text-foreground">{activeRegionData ? executiveStats?.electrifiedCount ?? 0 : caseMachines.filter((m) => m.electrified).length}</p></div>
+              <div className="rounded-2xl border border-border bg-secondary/20 p-4"><p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{t("dashboard.averageScore")}</p><p className="mt-2 text-2xl font-semibold text-foreground">{activeRegionData ? executiveStats?.averageScore ?? "—" : Math.round(caseMachines.reduce((sum, m) => sum + (getMachineEngineeringProfile(m.id)?.overallScore ?? 0), 0) / caseMachines.length)}</p></div>
             </div>
           </section>
 
           <section className="rounded-[28px] border border-border bg-card p-5 shadow-[0_18px_40px_hsl(var(--foreground)/0.05)]">
             <div className="flex items-center justify-between gap-3">
-              <div><p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Urgent scanner feed</p><h2 className="mt-2 text-lg font-semibold text-foreground">Alertas prioritários</h2></div>
+              <div><p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{t("dashboard.urgentScannerFeed")}</p><h2 className="mt-2 text-lg font-semibold text-foreground">{t("dashboard.priorityAlerts")}</h2></div>
               <Badge variant="outline" className="border-destructive/30 bg-destructive/10 text-destructive">{urgentSignals.length} high</Badge>
             </div>
             <div className="mt-4 space-y-3">
@@ -199,7 +201,7 @@ export default function Dashboard() {
                   <p className="mt-2 text-xs leading-relaxed text-foreground/80">{signal.impact}</p>
                 </button>
               )) : (
-                <div className="rounded-2xl border border-dashed border-border bg-secondary/10 p-4 text-sm text-muted-foreground">Nenhum alerta crítico apareceu para o recorte atual.</div>
+                <div className="rounded-2xl border border-dashed border-border bg-secondary/10 p-4 text-sm text-muted-foreground">{t("dashboard.noCriticalAlerts")}</div>
               )}
             </div>
           </section>
